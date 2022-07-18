@@ -1,7 +1,14 @@
-## curso-platzi-react-avanzado ⚛️
+# Curso platzi-react-avanzado ⚛️
 
-**¡Sígueme en Youtube para más contenido de React y Javascript!** 👉 https://www.youtube.com/midudev
+## URL
+<https://mediabros-petgram.vercel.app/>
 
-**¡Sígueme en Twitch para streams sobre desarrollo web!** 👉 https://www.twitch.tv/midudev
+#### Autor: Carlos J. Ramirez | @tomkat-cr
+#### Fecha: 2022-07-10
 
-Repositorio con el código del [Curso Avanzado de React de Platzi](https://platzi.com/cursos/react-avanzado/)
+...
+
+#### Autor original: @midudev
+##### Youtube 👉 https://www.youtube.com/midudev
+##### Twitch 👉 https://www.twitch.tv/midudev
+##### Repositorio original con el código del [Curso Avanzado de React de Platzi](https://platzi.com/cursos/react-avanzado/)

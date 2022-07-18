@@ -1,0 +1,67 @@
+{
+  "name": "curso-platzi-react-avanzado",
+  "version": "1.0.0",
+  "description": "**¡Sígueme en Youtube para más contenido de React y Javascript!** 👉 https://www.youtube.com/midudev",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "build-prod": "webpack --mode production",
+    "build-dev": "webpack --mode development",
+    "vercel-build": "npm run build-prod",
+    "dev": "webpack-dev-server --open --mode development",
+    "dev-2": "webpack serve --mode development",
+    "dev-prod": "webpack serve --mode production",
+    "lint": "standard",
+    "lint-fix": "standard --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomkat-cr/curso-platzi-react-avanzado.git"
+  },
+  "keywords": [],
+  "author": "Carlos J. Ramirez <cramirez@mediabros.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tomkat-cr/curso-platzi-react-avanzado/issues"
+  },
+  "homepage": "https://github.com/tomkat-cr/curso-platzi-react-avanzado#readme",
+  "devDependencies": {
+    "@babel/core": "^7.18.6",
+    "@babel/preset-env": "^7.18.6",
+    "@babel/preset-react": "^7.18.6",
+    "babel-loader": "^8.2.5",
+    "html-webpack-plugin": "^5.5.0",
+    "standard": "^17.0.0",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.9.3"
+  },
+  "dependencies": {
+    "intersection-observer": "^0.12.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.4.0",
+    "styled-components": "^5.3.5"
+  },
+  "standard": {
+    "ignore": [
+      "/api/**"
+    ]
+  },
+  "eslintConfig": {
+    "rules": {
+      "indent": [
+        "error",
+        2
+      ],
+      "react/jsx-indent": [
+        "error",
+        2
+      ]
+    },
+    "extends": [
+      "./node_modules/standard/eslintrc.json"
+    ]
+  }
+}

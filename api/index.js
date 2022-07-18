@@ -35,23 +35,23 @@ const server = new ApolloServer({
 app.use(auth)
 
 const errorHandler = (err, req, res, next) => {
-  if (res.headersSent) {
-    return next(err)
-  }
-  const { status } = err
-  res.status(status).json(err)
+    if (res.headersSent) {
+        return next(err)
+    }
+    const { status } = err
+    res.status(status).json(err)
 }
 app.use(errorHandler)
 server.applyMiddleware({ app, path: '/graphql' })
 
 app.get('/categories', function (req, res) {
-  res.send(categories)
+    res.send(categories)
 })
 
 if (!process.env.NOW_REGION) {
-  app.listen(PORT, () => {
-    console.log(`Listening at http://localhost:${PORT}/graphql`)
-  })
+    app.listen(PORT, () => {
+        console.log(`Listening at http://localhost:${PORT}/graphql`)
+    })
 }
 
 module.exports = app
