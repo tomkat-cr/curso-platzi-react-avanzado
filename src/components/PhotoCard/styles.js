@@ -10,7 +10,9 @@ export const Anchor = styled.a``
 // independently from the rest of the site or application it appears in.
 // Potential sources for the <article> element: Forum post, Blog post, News story
 export const Article = styled.article`
-    min-height: 200;
+    // Esto es para que el observer verifique bien la aparicion en pantalla, sino asume height=0 y los carga todos de una vex
+    min-height: 200 px;
+    // Si no se le pone el 200px sino solo '200', no funciona bien el observer...
 `
 
 export const ImageWrapper = styled.div`
@@ -24,7 +26,7 @@ export const ImageWrapper = styled.div`
 `
 
 export const Img = styled.img`
-  ${fadeIn({ time: '2s' })};
+  ${fadeIn({ time: '1s' })};
   box-shadow: 0px 10px 14px rgba(0, 0, 0, .2); // sombreado bastante suavecita
   height: 100%; // altura completa
   object-fit: cover; // que se adapte al espacio que tiene
