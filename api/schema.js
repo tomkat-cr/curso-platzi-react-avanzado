@@ -181,6 +181,9 @@ const resolvers = {
     categories () {
       return categoriesModel.list()
     },
+    category (_, { id }) {
+      return categoriesModel.find({ id })
+    },
     photo (_, { id }, context) {
       const favs = tryGetFavsFromUserLogged(context)
       return photosModel.find({ id, favs })
@@ -188,6 +191,9 @@ const resolvers = {
     photos (_, { categoryId }, context) {
       const favs = tryGetFavsFromUserLogged(context)
       return photosModel.list({ categoryId, favs })
+    },
+    user (_, { id }) {
+      return userModel.find({ id })
     }
   }
 }
