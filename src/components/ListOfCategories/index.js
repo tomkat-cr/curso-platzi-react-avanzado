@@ -32,7 +32,11 @@ export const ListOfCategories = () => {
           ? (<ErrorShow errorTitle={ERROR_API} errorMessage={error} />)
           : loading
             ? (<WaitAnimation />)
-            : categories.map(category => <Item key={category.id}><Category {...category} /></Item>)
+            : categories.map(category =>
+              <Item key={category.id}>
+                <Category {...category} path={`/pet/${category.id}`} />
+              </Item>
+            )
       }
     </List>
   )

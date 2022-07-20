@@ -8,7 +8,7 @@
     "build-prod": "webpack --mode production",
     "build-dev": "webpack --mode development",
     "vercel-build": "npm run build-prod",
-    "dev": "webpack-dev-server --open --mode development",
+    "dev": "webpack-dev-server --open --mode development --history-api-fallback",
     "dev-2": "webpack serve --mode development",
     "dev-prod": "webpack serve --mode production",
     "lint": "standard",
@@ -44,6 +44,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
+    "react-router-dom": "^6.3.0",
     "styled-components": "^5.3.5"
   },
   "standard": {
