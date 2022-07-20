@@ -34,13 +34,3 @@ export const Img = styled.img`
   top: 0;
   width: 100%; // que ocupe toda la horizontal
 `
-
-export const Button = styled.button`
-    padding-top: 8px; // para separarlas verticalmente
-    display: flex;
-    align-items: center;
-    & svg { // El '&' significa en sass "siguiendo el componente que le precede"
-            // Y este bloque applica a los elementos de tipo svg (Scalable Vector Graphics)
-        margin-right: 4px;
-    }
-`

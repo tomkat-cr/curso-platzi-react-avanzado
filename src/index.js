@@ -7,8 +7,8 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
 import { App } from './App'
 
 const client = new ApolloClient({
-  // uri: 'https://mediabros-petgram-backend-tomkat-cr.vercel.app/graphql',
-  uri: 'http://localhost:3500/graphql',
+  uri: 'https://mediabros-petgram-backend-tomkat-cr.vercel.app/graphql',
+  // uri: 'http://localhost:3500/graphql',
   cache: new InMemoryCache()
 })
 

@@ -2,7 +2,10 @@
 
 import React from 'react'
 import { MdArrowBack } from 'react-icons/md'
-import { Anchor, User, Category, ImageWrapper, Img, Description, Button, Column } from './styles'
+import {
+  Anchor, User, Category, ImageWrapper, Img,
+  Description, Button, Column
+} from './styles'
 
 // Hook para mostrar la categoria de cada foto
 export const PhotoCardContentCategory = ({ emoji, name, path, cover }) => (

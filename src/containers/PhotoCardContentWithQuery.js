@@ -8,7 +8,8 @@ import { Article } from '../components/PhotoCardContent/styles'
 import { getCategory } from '../hoc/getCategory'
 import { getUser } from '../hoc/getUser'
 import { WaitAnimation } from '../components/WaitAnimation'
-import { ErrorShow, ERROR_GRAPHQL, ERROR_ROW_NOT_FOUND } from '../components/ErrorShow'
+// import { ErrorShow, ERROR_GRAPHQL, ERROR_ROW_NOT_FOUND } from '../components/ErrorShow'
+import { ErrorShow, ERROR_GRAPHQL } from '../components/ErrorShow'
 
 const UserData = ({ id }) => {
   const { loading, error, data } = useQuery(getUser, { variables: { id } })
@@ -18,7 +19,7 @@ const UserData = ({ id }) => {
   if (error) {
     return <ErrorShow errorTitle={ERROR_GRAPHQL} errorMessage={error} errorDetail='[getUser]' />
   }
-  console.log('PhotoCardContentWithQuery - loading1, error1, data1', loading, error, data)
+  // console.log('PhotoCardContentWithQuery - loading1, error1, data1', loading, error, data)
   const { user = {} } = data
   return (
     <>
@@ -37,8 +38,8 @@ const CategoryData = ({ id }) => {
   if (error) {
     return <ErrorShow errorTitle={ERROR_GRAPHQL} errorMessage={error} errorDetail='[getCategory]' />
   }
-  console.log('PhotoCardContentWithQuery - loading2, error2, data2', loading, error, data)
-  // if (typeof data2 === 'undefined' || !('category' in data2)) {
+  // console.log('PhotoCardContentWithQuery - loading, error, data', loading, error, data)
+  // if (typeof data === 'undefined' || !('category' in data)) {
   //   return <ErrorShow errorTitle={ERROR_GRAPHQL} errorMessage={ERROR_ROW_NOT_FOUND} errorDetail='[getCategory]' />
   // }
   const { category = {} } = data
@@ -52,8 +53,7 @@ const CategoryData = ({ id }) => {
 }
 
 export const PhotoCardContentWithQuery = ({ id, categoryId, userId, description = '' }) => {
-  console.log('PhotoCardContentWithQuery(', 'id:', id, 'categoryId:', categoryId, 'userId:', userId, 'description:', description, ')')
-
+  // console.log('PhotoCardContentWithQuery(', 'id:', id, 'categoryId:', categoryId, 'userId:', userId, 'description:', description, ')')
   return (
     <>
       <Article>

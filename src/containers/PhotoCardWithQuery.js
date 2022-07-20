@@ -12,7 +12,7 @@ import { ErrorShow, ERROR_GRAPHQL } from '../components/ErrorShow'
 export const PhotoCardWithQuery = ({ id }) => {
   const { loading, error, data } = useQuery(getSinglePhoto, { variables: { id } })
 
-  console.log('>>--> PhotoCardWithQuery - data:', data)
+  // console.log('>>--> PhotoCardWithQuery - data:', data)
 
   if (error) {
     return <ErrorShow errorTitle={ERROR_GRAPHQL} errorMessage={error} errorDetail='[getSinglePhoto]' />

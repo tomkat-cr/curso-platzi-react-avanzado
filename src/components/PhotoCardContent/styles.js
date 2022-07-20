@@ -12,7 +12,8 @@ export const Article = styled.article`
 
 export const Column = styled.div`
     display: flex;
-    padding: 20px;
+    padding-top: 8px;
+    padding-left: 20px;
 `
 
 export const ImageWrapper = styled.div`
@@ -55,11 +56,15 @@ export const Button = styled.button`
 `
 export const User = styled.div`
     padding-top: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
     display: flex;
 `
 
 export const Category = styled.div`
     padding-top: 8px;
+    /* padding-left: 10px; */
+    padding-right: 10px;
     display: flex;
 `
 
