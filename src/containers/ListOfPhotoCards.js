@@ -1,10 +1,11 @@
 import React from 'react'
 import { useQuery } from '@apollo/client'
-import { withPhotos } from '../hoc/withPhotos'
+import { getPhotos } from '../hoc/getPhotos'
 import { ListOfPhotosComponent } from '../components/ListOfPhotos'
+import { WaitAnimation } from '../components/WaitAnimation'
 
 export const ListOfPhotoCards = ({ categoryId }) => {
-  const { loading, error, data } = useQuery(withPhotos, {
+  const { loading, error, data } = useQuery(getPhotos, {
     variables: { categoryId }
   })
 
@@ -14,7 +15,7 @@ export const ListOfPhotoCards = ({ categoryId }) => {
     return <h2>Internal Server Error</h2>
   }
   if (loading) {
-    return <h2>Loading...</h2>
+    return (<WaitAnimation />)
   }
 
   return <ListOfPhotosComponent data={data} />

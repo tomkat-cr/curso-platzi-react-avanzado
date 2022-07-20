@@ -1,8 +1,8 @@
-// src/hoc/withPhotos.js
+// src/hoc/getPhotos.js
 
 import { gql } from '@apollo/client'
 
-export const withPhotos = gql`
+export const getPhotos = gql`
   query getPhotos($categoryId: ID) {
     photos(categoryId: $categoryId) {
       id

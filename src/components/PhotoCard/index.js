@@ -18,12 +18,14 @@ export const PhotoCard = ({ id, likes = 0, src = DEFAULT_IMAGE }) => {
   // console.log('Liked key / value:', keyId, liked)
   const Icon = liked ? MdFavorite : MdFavoriteBorder
 
+  // TODO: volver a poner <Anchor href={`/detail/${id}`}>
+
   return (
     <Article ref={element}>
       {
         show &&
         <>
-          <Anchor href={`/detail/${id}`}>
+          <Anchor href={`?detail=${id}`}>
             <ImageWrapper>
               <Img src={src} />
             </ImageWrapper>
