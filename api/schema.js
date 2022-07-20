@@ -35,8 +35,10 @@ const typeDefs = gql`
   type Query {
     favs: [Photo]
     categories: [Category]
+    category(id: ID!): Category
     photos(categoryId: ID): [Photo],
     photo(id: ID!): Photo
+    user(id: ID!): User
   }
 
   input LikePhoto {
