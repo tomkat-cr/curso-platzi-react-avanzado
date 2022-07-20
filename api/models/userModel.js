@@ -45,4 +45,10 @@ function find ({ email }) {
     .value()
 }
 
-module.exports = { create, addFav, hasFav, removeFav, find }
+function findById ({ id }) {
+  return db.get('users')
+    .find({ id: +id })
+    .value()
+}
+
+module.exports = { create, addFav, hasFav, removeFav, find, findById }

@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react'
 export const fetchApIData = (url) => {
   const [rows, setRows] = useState([])
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(null)
   // console.log('1) fetchApIData - started... URL:', url)
 
   // Efecto para traer la primera vez que se rendea el componente, las filas
@@ -20,7 +21,10 @@ export const fetchApIData = (url) => {
         setRows(response)
         setLoading(false)
       })
-      .catch((e) => console.error('fetchApIData - ERROR:', e))
+      .catch((e) => {
+        console.error('fetchApIData - ERROR:', e)
+        setError(e)
+      })
   }, [])
   // OJO ese `, []` al final lo que hace es que el useEffect solo se llame la 1era vez.
   // si no se pone, se queda constantemente haciendo el fetch() en un loop infinito.
@@ -31,5 +35,5 @@ export const fetchApIData = (url) => {
   // console.log('3) fetchApIData - finished... Rows:', rows)
 
   // IMPORTANTE: si se devuelve como objeto, no ejecuta useEffect(). Hay que devolverlo como array[]
-  return [rows, loading]
+  return [loading, error, rows]
 }

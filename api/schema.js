@@ -9,10 +9,12 @@ const bcrypt = require('bcryptjs')
 const typeDefs = gql`
   type User {
     id: ID
+    idToken: String
     avatar: String
     name: String
     email: String
     isPremium: Boolean
+    favs: [String]
   }
 
   type Photo {
@@ -94,6 +96,7 @@ const resolvers = {
       const actualPhoto = photosModel.find({ id: photoId })
       return actualPhoto
     },
+
     likePhoto: (_, { input }, context) => {
       const { id: userId } = checkIsUserLogged(context)
 
@@ -122,6 +125,7 @@ const resolvers = {
 
       return actualPhoto
     },
+
     // Handle user signup
     async signup (_, { input }) {
       // add 1 second of delay in order to see loading stuff
@@ -184,7 +188,7 @@ const resolvers = {
       return categoriesModel.list()
     },
     category (_, { id }, context) {
-      return categoriesModel.find({ id })
+      return categoriesModel.findById({ id })
     },
     photo (_, { id }, context) {
       const favs = tryGetFavsFromUserLogged(context)
@@ -195,7 +199,7 @@ const resolvers = {
       return photosModel.list({ categoryId, favs })
     },
     user (_, { id }, context) {
-      return userModel.find({ id })
+      return userModel.findById({ id })
     }
   }
 }

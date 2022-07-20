@@ -4,4 +4,10 @@ function list () {
   return db.get('categories').value()
 }
 
-module.exports = { list }
+function findById ({ id }) {
+  return db.get('categories')
+    .find({ id: +id })
+    .value()
+}
+
+module.exports = { list, findById }

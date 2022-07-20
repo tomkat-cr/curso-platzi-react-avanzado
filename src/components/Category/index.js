@@ -1,3 +1,5 @@
+// src/components/Category/index.js
+
 import React from 'react'
 import { Anchor, Image } from './styles'
 

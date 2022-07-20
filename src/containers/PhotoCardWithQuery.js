@@ -4,8 +4,10 @@ import React from 'react'
 import { useQuery } from '@apollo/client'
 
 import { PhotoCard } from '../components/PhotoCard'
+import { PhotoCardContentWithQuery } from './PhotoCardContentWithQuery'
 import { getSinglePhoto } from '../hoc/getSiglePhoto'
 import { WaitAnimation } from '../components/WaitAnimation'
+import { ErrorShow, ERROR_GRAPHQL } from '../components/ErrorShow'
 
 export const PhotoCardWithQuery = ({ id }) => {
   const { loading, error, data } = useQuery(getSinglePhoto, { variables: { id } })
@@ -13,7 +15,7 @@ export const PhotoCardWithQuery = ({ id }) => {
   console.log('>>--> PhotoCardWithQuery - data:', data)
 
   if (error) {
-    return <h2>Internal Server Error</h2>
+    return <ErrorShow errorTitle={ERROR_GRAPHQL} errorMessage={error} errorDetail='[getSinglePhoto]' />
   }
   if (loading) {
     return (<WaitAnimation />)
@@ -23,6 +25,7 @@ export const PhotoCardWithQuery = ({ id }) => {
   return (
     <>
       <PhotoCard {...photo} />
+      <PhotoCardContentWithQuery {...photo} />
     </>
   )
 }

@@ -3,6 +3,7 @@ import { useQuery } from '@apollo/client'
 import { getPhotos } from '../hoc/getPhotos'
 import { ListOfPhotosComponent } from '../components/ListOfPhotos'
 import { WaitAnimation } from '../components/WaitAnimation'
+import { ErrorShow, ERROR_GRAPHQL } from '../components/ErrorShow'
 
 export const ListOfPhotoCards = ({ categoryId }) => {
   const { loading, error, data } = useQuery(getPhotos, {
@@ -12,7 +13,7 @@ export const ListOfPhotoCards = ({ categoryId }) => {
   // console.log('>>--> ListOfPhotos - data:', data)
 
   if (error) {
-    return <h2>Internal Server Error</h2>
+    return <ErrorShow errorTitle={ERROR_GRAPHQL} errorMessage={error} errorDetail='[getPhotos]' />
   }
   if (loading) {
     return (<WaitAnimation />)
