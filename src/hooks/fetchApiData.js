@@ -29,5 +29,7 @@ export const fetchApIData = (url) => {
   // Ver: https://reactjs.org/docs/hooks-reference.html#useeffect
 
   // console.log('3) fetchApIData - finished... Rows:', rows)
+
+  // IMPORTANTE: si se devuelve como objeto, no ejecuta useEffect(). Hay que devolverlo como array[]
   return [rows, loading]
 }

@@ -1,21 +1,38 @@
 // src/components/ListOfPhotoCards/index.js
-// import React, { useEffect,useState } from 'react'
+
 import React from 'react'
+import { useQuery, gql } from '@apollo/client'
+
 import { PhotoCard } from '../PhotoCard'
 import { List, Item } from './styles'
 
-import { photos } from '../../../api/db.json'
+const withPhotos = gql`
+  query getPhotos {
+    photos {
+      id
+      categoryId
+      src
+      likes
+      userId
+      liked
+    }
+  }
+`
 
 export const ListOfPhotos = () => {
-//   const [photos, setPhotos] = useState([])
-//   useEffect(function () {
-//     window.fetch('https://mediabros-petgram-server-tomkat-cr.vercel.app/photos')
-//       .then(res => res.json())
-//       .then(response => {
-//         setPhotos(response)
-//       })
-//       .catch((e) => console.error(e))
-//   }, [])
+  const { loading, error, data } = useQuery(withPhotos)
+
+  // console.log('>>--> ListOfPhotos - data:', data)
+
+  if (error) {
+    return <h2>Internal Server Error</h2>
+  }
+  if (loading) {
+    return <h2>Loading...</h2>
+  }
+
+  const { photos } = data
+
   return (
     <List>
       {

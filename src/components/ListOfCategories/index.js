@@ -13,7 +13,7 @@ import { fetchApIData } from '../../hooks/fetchApiData'
 // import { categories } from '../../../api/db.json'
 
 export const ListOfCategories = () => {
-  const url = 'https://mediabros-petgram-server-tomkat-cr.vercel.app/categories'
+  const url = 'https://mediabros-petgram-backend-tomkat-cr.vercel.app/categories'
   // console.log('ListOfCategories - URL:', url)
   const [categories, loading] = fetchApIData(url)
   // console.log('ListOfCategories - despues de llamar a fetchApIData - categories:', categories)
