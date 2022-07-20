@@ -15,7 +15,7 @@ export const PhotoCard = ({ id, likes = 0, src = DEFAULT_IMAGE }) => {
   const keyId = `like-id-${id}`
   const [liked, setLiked] = useLocalStorage(keyId, false)
 
-  console.log('Liked key / value:', keyId, liked)
+  // console.log('Liked key / value:', keyId, liked)
   const Icon = liked ? MdFavorite : MdFavoriteBorder
 
   return (

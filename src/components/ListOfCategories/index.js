@@ -8,38 +8,15 @@
 import React, { useEffect, useState } from 'react'
 import { Category } from '../Category'
 import { List, Item } from './styles'
+import { fetchApIData } from '../../hooks/fetchApiData'
 
 // import { categories } from '../../../api/db.json'
 
-// Custom hook para cargar las categorias asincronamente
-// Devuelve las categorias y la condicion loading para saber si se esta cargando
-function useCategoriesData () {
-  const [categories, setCategories] = useState([])
-  const [loading, setLoading] = useState(false)
-
-  // Efecto para traer la primera vez que se rendea el componente, las categorias
-  // con un fetch asincrono.
-  useEffect(function () {
-    setLoading(true)
-    window.fetch('https://mediabros-petgram-server-tomkat-cr.vercel.app/categories')
-      .then(res => res.json())
-      .then(response => {
-        setCategories(response)
-        setLoading(false)
-      })
-      .catch((e) => console.error(e))
-  }, [])
-  // OJO ese `, []` al final lo que hace es que el useEffect solo se llame la 1era vez.
-  // si no se pone, se queda constantemente haciendo el fetch() en un loop infinito.
-  // Ese segundo parametro del useEffect es un array [] con las dependencias.
-  // Si alguna de estas dependencias cambia, entonces se vuelve a llamar a useEffect.
-  // Ver: https://reactjs.org/docs/hooks-reference.html#useeffect
-
-  return { categories, loading }
-}
-
 export const ListOfCategories = () => {
-  const { categories, loading } = useCategoriesData()
+  const url = 'https://mediabros-petgram-server-tomkat-cr.vercel.app/categories'
+  // console.log('ListOfCategories - URL:', url)
+  const [categories, loading] = fetchApIData(url)
+  // console.log('ListOfCategories - despues de llamar a fetchApIData - categories:', categories)
   const [showFixed, setShowfixed] = useState(false)
 
   // Aca se cambio para usar una prpiedad 'fixed' en vez de una clase
