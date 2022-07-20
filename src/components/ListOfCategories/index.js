@@ -8,7 +8,7 @@
 import React, { useEffect, useState } from 'react'
 import { Category } from '../Category'
 import { List, Item } from './styles'
-import { fetchApIData } from '../../hooks/fetchApiData'
+import { fetchApIData } from '../../containers/fetchApiData'
 
 // import { categories } from '../../../api/db.json'
 
