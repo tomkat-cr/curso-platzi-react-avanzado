@@ -1,9 +1,8 @@
 // src/components/Logo/index.js
 
 import * as React from 'react'
-import { Link } from 'react-router-dom'
 
-import { Svg } from './style'
+import { Svg, Link } from './style'
 
 export const Logo = (props) => (
   <Link to='/'>

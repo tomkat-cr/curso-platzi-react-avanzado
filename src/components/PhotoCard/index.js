@@ -1,7 +1,7 @@
 // src/components/PhotoCard/index.js
 
 import React from 'react'
-import { Img, Anchor, Article, ImageWrapper } from './styles'
+import { Img, Link, Article, ImageWrapper } from './styles'
 import { useNearScreen } from '../../hooks/useNearScreen'
 import { useLocalStorage } from '../../hooks/useLocalStorage'
 import { FavButton } from '../FavButton'
@@ -38,11 +38,11 @@ export const PhotoCard = ({ id, likes = 0, src = DEFAULT_IMAGE }) => {
       {
         show &&
         <>
-          <Anchor href={`?detail=${id}`}>
+          <Link to={`/detail/${id}`}>
             <ImageWrapper>
               <Img src={src} />
             </ImageWrapper>
-          </Anchor>
+          </Link>
           <FavButton liked={liked} likes={likes} onClick={handleFavClick} />
         </>
       }

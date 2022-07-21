@@ -1,9 +1,8 @@
 // src/components/Category/index.js
 
 import React from 'react'
-import { Link } from 'react-router-dom'
 
-import { Image, Emoji } from './styles'
+import { Image, Emoji, Link } from './styles'
 
 const DEFAULT_IMAGE = 'https://i.imgur.com/dJa0Hpl.jpg'
 

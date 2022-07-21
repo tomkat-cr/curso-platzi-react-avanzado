@@ -1,9 +1,15 @@
 // src/components/PhotoCard/styles.js
 
 import styled from 'styled-components'
+import { Link as LinkRouter } from '../Category/styles'
 import { fadeIn } from '../../styles/animation'
 
-export const Anchor = styled.a``
+export const Link = styled(LinkRouter)`
+  text-align: left;
+  text-decoration: none;
+  width: 100%;
+  -webkit-tap-highlight-color: transparent;
+`
 
 // HTML5 Article is a HTML5 semantic element, similar to <section> and <header>.
 // It is most commonly used to contain information that may be distributed
@@ -17,7 +23,7 @@ export const Article = styled.article`
 
 export const ImageWrapper = styled.div`
     border-radius: 10px; // para que se vea mas moderno
-    display: block; // 
+    display: block;
     height: 0; // que sea cero para...
     overflow: hidden; // para que no se escape nada de lo que se ve en el componente
     padding: 56.25% 0 0 0; // empuja el contenido de la imagen hacia arriba y lo demas en cero para conservar la relacion de aspecto de todas las imagenes en la lista

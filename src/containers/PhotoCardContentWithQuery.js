@@ -46,7 +46,7 @@ const CategoryData = ({ id }) => {
   return (
     <>
       <PhotoCardContentCategory
-        {...category}
+        {...category} path={`/pet/${category.id}`}
       />
     </>
   )

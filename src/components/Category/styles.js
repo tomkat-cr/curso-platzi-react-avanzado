@@ -7,6 +7,7 @@ export const Link = styled(LinkRouter)`
   text-align: center;
   text-decoration: none;
   width: 75px;
+  -webkit-tap-highlight-color: transparent;
 `
 
 export const Image = styled.img`

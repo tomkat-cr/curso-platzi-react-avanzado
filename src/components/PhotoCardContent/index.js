@@ -3,7 +3,7 @@
 import React from 'react'
 import { MdArrowBack } from 'react-icons/md'
 import {
-  Anchor, User, Category, ImageWrapper, Img,
+  Link, User, Category, ImageWrapper, Img,
   Description, Button, Column
 } from './styles'
 
@@ -12,9 +12,9 @@ export const PhotoCardContentCategory = ({ emoji, name, path, cover }) => (
   <Column>
     <Category>{emoji} {name}</Category>
     <ImageWrapper small='1'>
-      <Anchor href={path}>
+      <Link to={path}>
         <Img src={cover} small='1' />
-      </Anchor>
+      </Link>
     </ImageWrapper>
   </Column>
 )
@@ -33,8 +33,8 @@ export const PhotoCardContentUser = ({ name, avatar }) => (
 export const PhotoCardContentDesc = ({ description = '' }) => (
   <>
     <Description>{description}</Description>
-    <Anchor href='/'>
+    <Link to='/'>
       <Button><MdArrowBack size='30px' /></Button>
-    </Anchor>
+    </Link>
   </>
 )

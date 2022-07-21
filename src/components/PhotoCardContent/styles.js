@@ -1,9 +1,14 @@
 // src/components/PhotoCardContent/styles.js
 
 import styled, { css } from 'styled-components'
+import { Link as LinkRouter } from '../Category/styles'
+
 import { fadeIn } from '../../styles/animation'
 
-export const Anchor = styled.a``
+export const Link = styled(LinkRouter)`
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+`
 
 export const Article = styled.article`
     display: flex;
