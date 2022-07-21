@@ -1,7 +1,7 @@
 // src/components/PhotoCard/styles.js
 
 import styled from 'styled-components'
-import { Link as LinkRouter } from '../Category/styles'
+import { NavLink as LinkRouter } from 'react-router-dom'
 import { fadeIn } from '../../styles/animation'
 
 export const Link = styled(LinkRouter)`

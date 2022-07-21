@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import { Link as LinkRouter } from 'react-router-dom'
+import { NavLink as LinkRouter } from 'react-router-dom'
+import { fadeIn } from '../../styles/animation'
 
 export const Nav = styled.nav` 
   display: flex;
@@ -23,9 +24,24 @@ export const Link = styled(LinkRouter)`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #888;
+  color: #888; // Color gris
   height: 100%;
   width: 100%;
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
+  // Al estar presente el atributo 'aria-current',
+  // se agrega un punto al icono de la pagina corriente en el NavBar,
+  // Y el icono se pone en color negro.
+  // Asi queda con una experiencia nativa del dispositivo.
+  &[aria-current] {
+    color: #000; // Color negro
+    &:after { // Pseudo elemento que se ubica luego del elemento del Link
+      ${fadeIn({ time: '0.5s' })} // efecto de difuminado para el puntito
+      content: '·'; // Punto que se agrega...
+      position: absolute; // Para ubicarlo debajo del icono del Navbar
+      bottom: 0; // Para ubicarlo debajo del icono del Navbar
+      font-size: 34px;  // Para que resalte bastante
+      line-height: 20px; // Para que quede con bastante margen
+    }
+  }
 `
